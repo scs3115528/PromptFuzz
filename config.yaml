@@ -1,0 +1,16 @@
+project_name: libzip
+static_lib_name: libzip.a
+dyn_lib_name: libzip.so
+ban:
+  - zip_register_progress_callback_with_state
+  - zip_register_progress_callback_with_state
+null_term: true
+landmark: true
+extra_flags:
+  - -lbz2
+  - -llzma
+  - -lz
+  - -lzstd
+  - -v
+  - -lssl
+  - -lcrypto
