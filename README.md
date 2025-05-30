@@ -4,7 +4,7 @@
 论文介绍：https://dl.acm.org/doi/pdf/10.1145/3658644.3670396  
 主创博客：https://yunlongs.cn/  
 ## 二、用法
-以项目cJSON为例
+以项目cJSON为例  
 1.环境搭建
 ```
 https://github.com/PromptFuzz/PromptFuzz
@@ -47,7 +47,7 @@ llvm-cov show ./fuzzer_cov --instr-profile=default.profdata --format=html -outpu
 参考文档
 https://github.com/FuzzAnything/PromptFuzz/blob/main/data/README.md
 ### 尝试项目一：libzip
-1.编写config.yaml
+#### 1.编写config.yaml
 内容包括项目名，静态库名称，动态库名称，不参加的函数等等
 ```
 project_name: libzip
@@ -77,8 +77,8 @@ spec: Type(Option<String>, default=None). The library specifications used in the
 init_file: Type(Option<String>, default=None). The initialization file used in library setup.  
 asan_options: Type(Option, defalut=None). The extra ASAN options used for sanitization.  
 disable_fmemopen: Type(bool, default=false). If true, disable the usage of fmemopen and replace it to fopen.  
-rss_limit_mb: Type(Option, default=None). The memory limit that allowed for each fuzz driver in this library. 
-2.编写build.sh
+rss_limit_mb: Type(Option, default=None). The memory limit that allowed for each fuzz driver in this library.   
+#### 2.编写build.sh
 - download: specify where to download this project.
 - build_lib: specify the commands to build this library. The commands could be directly copyied from OSS-Fuzz.
 - build_oss_fuzz: specify how to build the interal fuzzers of this project. Could be directly copyied from OSS-Fuzz.
@@ -149,7 +149,7 @@ function build_dict() {
 
 build_all
 ```
-3.执行fuzzer
+#### 3.执行fuzzer
 ```
 cargo run --bin fuzzer -- libzip
 ```
